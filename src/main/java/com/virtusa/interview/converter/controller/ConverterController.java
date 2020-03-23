@@ -29,7 +29,7 @@ public class ConverterController {
 	 * @return the response entity
 	 */
 	@GetMapping(value="/numberconverter/{number}")
-	public ResponseEntity<String> converterNumber(@PathVariable Integer number) {
+	public ResponseEntity<String> converterNumber(@PathVariable Long number) {
 		String resp = converterService.convert(number);
 		return new ResponseEntity<>(resp,HttpStatus.OK);
 	}

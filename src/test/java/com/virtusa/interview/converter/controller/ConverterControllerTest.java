@@ -27,7 +27,7 @@ public class ConverterControllerTest {
 
 	@Test
 	public void converterNumberTest() throws Exception {
-		Mockito.when(converterService.convert(Mockito.anyInt())).thenReturn("One hundred thousand");
+		Mockito.when(converterService.convert(Mockito.anyLong())).thenReturn("One hundred thousand");
 		MvcResult mvcResult = mockMvc
 				.perform(MockMvcRequestBuilders.get("/numberconverter/100000").accept(MediaType.APPLICATION_JSON_VALUE))
 				.andReturn();
@@ -39,9 +39,9 @@ public class ConverterControllerTest {
 	
 	@Test
 	public void converterNumberBadRequestTest() throws Exception {
-		Mockito.when(converterService.convert(Mockito.anyInt())).thenReturn("One hundred thousand");
+		Mockito.when(converterService.convert(Mockito.anyLong())).thenReturn("One hundred thousand");
 		MvcResult mvcResult = mockMvc
-				.perform(MockMvcRequestBuilders.get("/numberconverter/10000000000").accept(MediaType.APPLICATION_JSON_VALUE))
+				.perform(MockMvcRequestBuilders.get("/numberconverter/abc").accept(MediaType.APPLICATION_JSON_VALUE))
 				.andReturn();
 		int status = mvcResult.getResponse().getStatus();
 		Assertions.assertEquals(400, status);

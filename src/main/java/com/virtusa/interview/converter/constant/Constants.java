@@ -1,4 +1,4 @@
-package com.virtusa.interview.converter.contant;
+package com.virtusa.interview.converter.constant;
 
 
 /**

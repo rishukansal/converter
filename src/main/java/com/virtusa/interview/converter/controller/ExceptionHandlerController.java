@@ -21,7 +21,7 @@ public class ExceptionHandlerController {
 	@ExceptionHandler({NumberFormatException.class})
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity<String> badInput(){
-		return new ResponseEntity<>("Number too big to convert",HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>("Bad input",HttpStatus.BAD_REQUEST);
 	}
 
 }

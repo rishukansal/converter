@@ -22,8 +22,8 @@ public class ConverterServiceImplTest {
 	
 	@Test
 	public void convertTest() {
-		Mockito.when(util.convertLessThanOneThousand(Mockito.anyInt())).thenReturn("One hundred thousand");
-		String resp = converterService.convert(100000);
+		Mockito.when(util.convertLessThanOneThousand(Mockito.anyLong())).thenReturn("One hundred thousand");
+		String resp = converterService.convert(100000L);
 		Assertions.assertNotNull(resp);
 	}
 

@@ -3,7 +3,7 @@ package com.virtusa.interview.converter.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.virtusa.interview.converter.contant.Constants;
+import com.virtusa.interview.converter.constant.Constants;
 import com.virtusa.interview.converter.util.Utility;
 
 
@@ -24,7 +24,7 @@ public class ConverterServiceImpl implements ConverterService {
 	 * @return the string
 	 */
 	@Override
-	public String convert(Integer number) {
+	public String convert(Long number) {
         if (number == 0) { return "zero"; }
         
         String prefix = "";
@@ -38,7 +38,7 @@ public class ConverterServiceImpl implements ConverterService {
         int place = 0;
         
         do {
-            int n = number % 1000;
+            long n = number % 1000;
             if (n != 0){
                 String s = util.convertLessThanOneThousand(n);
                 current = s + Constants.SPL_NAMES[place] + current;

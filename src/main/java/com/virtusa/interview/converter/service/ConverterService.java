@@ -13,6 +13,6 @@ public interface ConverterService {
 	 * @param number the number
 	 * @return the string
 	 */
-	public String convert(Integer number);
+	public String convert(Long number);
 
 }
